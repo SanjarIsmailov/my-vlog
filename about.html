@@ -68,57 +68,98 @@
     .info-section p {
       font-weight: bold;
     }
+
+    /* Button 89 styles */
+    .button-89 {
+      --b: 3px;   /* border thickness */
+      --s: .45em; /* size of the corner */
+      --color: #373B44;
+
+      padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+      color: var(--color);
+      --_p: var(--s);
+      background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+      transition: .3s linear, color 0s, background-color 0s;
+      outline: var(--b) solid #0000;
+      outline-offset: .6em;
+      font-size: 16px;
+
+      border: 0;
+
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .button-89:hover,
+    .button-89:focus-visible{
+      --_p: 0px;
+      outline-color: var(--color);
+      outline-offset: .05em;
+    }
+
+    .button-89:active {
+      background: var(--color);
+      color: #fff;
+    }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="index.html" style="text-decoration: none; color: inherit;">
-      <h1>About Sanjar</h1>
-    </a>
-    <nav>
-      <a href="https://t.me/interhouselyceum">Study</a>
-      <a href="https://t.me/nullteen">Channel</a>
-      <a href="#">Talks</a>
-      <a href="#">My Project</a>
-    </nav>
-  </header>
+<header>
+  <a href="index.html" style="text-decoration: none; color: inherit;">
+    <h1>About Sanjar</h1>
+  </a>
+  <nav>
+    <a href="https://t.me/interhouselyceum">Study</a>
+    <a href="https://t.me/nullteen">Channel</a>
+    <a href="#">Talks</a>
+    <a href="#">My Project</a>
+  </nav>
+</header>
 
-  <main>
-    <h2>ABOUT ME</h2>
-    <p>
-      I am Sanjar, a passionate software developer from Uzbekistan, constantly learning and improving my skills.
-      Currently, I am focused on backend development, with expertise in Java and Spring Boot.
-    </p>
+<main>
+  <h2>ABOUT ME</h2>
 
-    <div class="info-section">
-      <p><strong>Education:</strong> Inter House Lyceum</p>
-      <p>My journey in technology started here, where I built my foundation in programming and problem-solving.</p>
-    </div>
+  <!-- Button placed here -->
+  <a href="index.html"><button class="button-89" role="button"><</button></a>
 
-    <div class="info-section">
-      <p><strong>Further Learning:</strong> PDP Academy & Najot Ta’lim IT School</p>
-      <p>At PDP Academy, I deepened my programming skills, working on real-world projects. Later, at Najot Ta’lim, 
-         I refined my expertise in web development and software engineering, focusing on building scalable applications.</p>
-    </div>
+  <p>
+    I am Sanjar, a passionate software developer from Uzbekistan, constantly learning and improving my skills.
+    Currently, I am focused on backend development, with expertise in Java and Spring Boot.
+  </p>
 
-    <img src="pdp.jpg" alt="PDP Academy">
+  <div class="info-section">
+    <p><strong>Education:</strong> Inter House Lyceum</p>
+    <p>My journey in technology started here, where I built my foundation in programming and problem-solving.</p>
+  </div>
 
-    <div class="info-section">
-      <p><strong>Passion:</strong> Empowering Young Developers</p>
-      <p>💡 I actively mentor and support young programmers, helping them build confidence and technical skills as they step into the world of coding.</p>
-    </div>
+  <div class="info-section">
+    <p><strong>Further Learning:</strong> PDP Academy & Najot Ta’lim IT School</p>
+    <p>At PDP Academy, I deepened my programming skills, working on real-world projects. Later, at Najot Ta’lim,
+      I refined my expertise in web development and software engineering, focusing on building scalable applications.</p>
+  </div>
 
-    <div class="info-section">
-      <p><strong>Productivity Hack:</strong> Growth Through Challenges</p>
-      <p>🚀 I believe that every coding challenge is an opportunity to grow. The more I solve, the better I become.</p>
-    </div>
+  <img src="pdp.jpg" alt="PDP Academy">
 
-    <div class="info-section">
-      <p><strong>Mindset:</strong> Code, Learn, Repeat</p>
-      <p>🎯 For me, programming is a continuous journey—learning, building, and refining every day to create better solutions.</p>
-    </div>
-  </main>
+  <div class="info-section">
+    <p><strong>Passion:</strong> Empowering Young Developers</p>
+    <p>💡 I actively mentor and support young programmers, helping them build confidence and technical skills as they step into the world of coding.</p>
+  </div>
+
+  <div class="info-section">
+    <p><strong>Productivity Hack:</strong> Growth Through Challenges</p>
+    <p>🚀 I believe that every coding challenge is an opportunity to grow. The more I solve, the better I become.</p>
+  </div>
+
+  <div class="info-section">
+    <p><strong>Mindset:</strong> Code, Learn, Repeat</p>
+    <p>🎯 For me, programming is a continuous journey—learning, building, and refining every day to create better solutions.</p>
+  </div>
+</main>
 
 </body>
 </html>
