@@ -6,12 +6,8 @@
 /target/
 /build/
 
-# Ignore compiled class files
+# Ignore compiled Java class files
 *.class
-
-# Ignore Eclipse project files
-.project
-.classpath
 
 # Ignore Maven wrapper files
 .mvn/
@@ -24,12 +20,21 @@
 *.war
 *.ear
 
+# Ignore Eclipse project files
+.project
+.classpath
+
 # Ignore log files
 *.log
 
 # Ignore IDE specific files
 *.swp
 
-# Ignore test files and directories
+# Ignore HTML files (if needed)
+*.html
+*.htm
+
+# Ignore test files and directories (Java and Python)
 tests/
 test_*.py
+test_*.java
