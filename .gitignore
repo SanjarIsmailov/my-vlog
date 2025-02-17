@@ -1,0 +1,35 @@
+# Ignore IntelliJ IDEA files
+.idea/
+*.iml
+
+# Ignore build output directories
+/target/
+/build/
+
+# Ignore compiled class files
+*.class
+
+# Ignore Eclipse project files
+.project
+.classpath
+
+# Ignore Maven wrapper files
+.mvn/
+
+# Ignore Gradle wrapper files
+.gradle/
+
+# Ignore Java package files
+*.jar
+*.war
+*.ear
+
+# Ignore log files
+*.log
+
+# Ignore IDE specific files
+*.swp
+
+# Ignore test files and directories
+tests/
+test_*.py
