@@ -101,26 +101,6 @@
       color: #fff;
     }
 
-    .download-cv {
-      background-color: #28a745;
-      color: #fff;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      transform: rotate(-15deg); /* Angled button */
-      transition: transform 0.3s ease-in-out, background-color 0.3s;
-    }
-
-    .download-cv:hover {
-      background-color: #218838;
-      transform: rotate(-10deg);
-    }
-
     footer {
       margin-top: 9rem;
       padding: 1rem;
@@ -155,7 +135,6 @@
     <div class="buttons">
       <a href="../main/blog.html"><button class="read-blog">Read Blog</button></a>
       <a href="../main/about.html"><button class="about-me">About Me</button></a>
-      <button class="download-cv" onclick="downloadCV()">Download CV</button>
     </div>
   </section>
 </main>
@@ -163,12 +142,5 @@
 <footer>
   <p>&copy; 2025 nullteen boy</p>
 </footer>
-
-<script>
-  function downloadCV() {
-    window.location.href = '../main/cv.docx';
-  }
-</script>
-
 </body>
 </html>
