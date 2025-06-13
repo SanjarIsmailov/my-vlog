@@ -1,165 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Sanjar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanjar's Blog - Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet"/>
   <style>
     body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      padding: 1rem 2rem;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    header nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #333;
-      font-size: 1rem;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    main img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    main h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-    }
-
-    main p {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-    }
-
-    .info-section {
-      margin-top: 20px;
-    }
-
-    .info-section p {
-      font-weight: bold;
-    }
-
-    /* Button 89 styles */
-    .button-89 {
-      --b: 3px;   /* border thickness */
-      --s: .45em; /* size of the corner */
-      --color: #373B44;
-
-      padding: calc(.5em + var(--s)) calc(.9em + var(--s));
-      color: var(--color);
-      --_p: var(--s);
-      background:
-        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-      transition: .3s linear, color 0s, background-color 0s;
-      outline: var(--b) solid #0000;
-      outline-offset: .6em;
-      font-size: 16px;
-
-      border: 0;
-
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-    }
-
-    .button-89:hover,
-    .button-89:focus-visible{
-      --_p: 0px;
-      outline-color: var(--color);
-      outline-offset: .05em;
-    }
-
-    .button-89:active {
-      background: var(--color);
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      flex-direction: column;
+      text-align: center;
+      animation: bgShift 10s infinite alternate;
     }
 
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .content {
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #00f0ff;
+      text-shadow: 0 0 10px #00f0ff;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: #bbb;
+      margin-bottom: 2rem;
+    }
+
+    .soon-text {
+      font-size: 4rem;
+      color: #ff0077;
+      animation: pulse 1.8s infinite;
+      text-shadow: 0 0 15px #ff0077;
+      margin-bottom: 2rem;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    .back-btn {
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      background-color: transparent;
+      border: 2px solid #00f0ff;
+      color: #00f0ff;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00f0ff;
+    }
+
+    .back-btn:hover {
+      background-color: #00f0ff;
+      color: #000;
+      box-shadow: 0 0 20px #00f0ff;
+    }
   </style>
 </head>
 <body>
-
-<header>
-  <a href="index.html" style="text-decoration: none; color: inherit;">
-    <h1>About Sanjar</h1>
-  </a>
-  <nav>
-    <a href="https://t.me/interhouselyceum">Study</a>
-    <a href="blog.html">Blog</a>
-    <a href="#">Talks</a>
-    <a href="https://t.me/nullteen">Channel</a>
-  </nav>
-</header>
-
-<main>
-  <h2>ABOUT ME</h2>
-
-  <!-- Button placed here -->
-  <a href="index.html"><button class="button-89" role="button"><</button></a>
-
-  <p>
-    I am Sanjar, a passionate software developer from Uzbekistan, constantly learning and improving my skills.
-    Currently, I am focused on backend development, with expertise in Java and Spring Boot.
-  </p>
-
-  <div class="info-section">
-    <p><strong>Education:</strong> Inter House Lyceum</p>
-    <p>My journey in technology started here, where I built my foundation in programming and problem-solving.</p>
+  <div class="content">
+    <h1>We're building something epic.</h1>
+    <p>Sanjar's futuristic blog is loading...</p>
+    <div class="soon-text">Soon...</div>
+    <a href="index.html" class="back-btn">⟵ Return to Main</a>
   </div>
-
-  <div class="info-section">
-    <p><strong>Further Learning:</strong> PDP Academy & Najot Ta’lim IT School</p>
-    <p>At PDP Academy, I deepened my programming skills, working on real-world projects. Later, at Najot Ta’lim,
-      I refined my expertise in web development and software engineering, focusing on building scalable applications.</p>
-  </div>
-
-  <img src="pdp.jpg" alt="PDP Academy">
-
-  <div class="info-section">
-    <p><strong>Passion:</strong> Empowering Young Developers</p>
-    <p>💡 I actively mentor and support young programmers, helping them build confidence and technical skills as they step into the world of coding.</p>
-  </div>
-
-  <div class="info-section">
-    <p><strong>Productivity Hack:</strong> Growth Through Challenges</p>
-    <p>🚀 I believe that every coding challenge is an opportunity to grow. The more I solve, the better I become.</p>
-  </div>
-
-  <div class="info-section">
-    <p><strong>Mindset:</strong> Code, Learn, Repeat</p>
-    <p>🎯 For me, programming is a continuous journey—learning, building, and refining every day to create better solutions.</p>
-  </div>
-</main>
-
 </body>
 </html>
