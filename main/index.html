@@ -4,98 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sanjar's Vlog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      text-align: center;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      color: #fff;
-      min-height: 100vh;
-      animation: gradientShift 10s infinite alternate;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
+    /* Fade-in overlay */
+    #overlay {
+      position: fixed;
+      inset: 0;
+      background-color: #ffffff;
+      z-index: 2000;
+      transition: opacity 0.5s ease;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-bottom: 2px solid #00f0ff;
-      box-shadow: 0 0 10px #00f0ff;
+      padding: 1.2rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
       font-size: 1.8rem;
-      color: #00f0ff;
-      text-shadow: 0 0 8px #00f0ff;
+      color: #2c3e50;
     }
 
-    header nav a {
+    nav a {
       margin: 0 1rem;
       text-decoration: none;
-      color: #ff00ff;
-      font-size: 1rem;
-      transition: color 0.3s;
+      color: #2c3e50;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: fadeInUp 0.6s ease forwards;
     }
 
-    header nav a:hover {
-      color: #00f0ff;
-      text-shadow: 0 0 5px #00f0ff;
+    nav a:nth-child(1) { animation-delay: 0.2s; }
+    nav a:nth-child(2) { animation-delay: 0.3s; }
+    nav a:nth-child(3) { animation-delay: 0.4s; }
+    nav a:nth-child(4) { animation-delay: 0.5s; }
+
+    nav a:hover {
+      color: #3498db;
     }
 
     main {
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeInUp 1s ease-out both;
     }
 
     .profile {
-      margin-top: 2rem;
+      text-align: center;
     }
 
     .profile-pic {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
-      border: 3px solid #ff00ff;
-      box-shadow: 0 0 15px #ff00ff;
-      margin-bottom: 1.5rem;
+      object-fit: cover;
+      border: 4px solid #3498db;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      animation: fadeInUp 1.2s ease-out both;
     }
 
     h2 {
+      margin-top: 1rem;
       font-size: 2rem;
-      color: #00f0ff;
-      text-shadow: 0 0 5px #00f0ff;
+      color: #2c3e50;
     }
 
     p {
-      margin: 0.6rem 0;
+      margin: 0.4rem 0;
+      color: #666;
       font-size: 1.1rem;
-      color: #ccc;
+    }
+
+    .social-links {
+      margin-top: 1rem;
     }
 
     .social-links a {
-      margin: 0.5rem;
-      font-size: 1.8rem;
-      color: #ff00ff;
-      text-decoration: none;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      color: #2c3e50;
       transition: transform 0.3s, color 0.3s;
     }
 
     .social-links a:hover {
-      color: #00f0ff;
-      transform: scale(1.2);
+      color: #3498db;
+      transform: translateY(-3px);
     }
 
     .buttons {
@@ -103,37 +121,47 @@
     }
 
     button {
-      padding: 0.9rem 1.8rem;
-      margin: 0.7rem;
+      padding: 0.8rem 1.6rem;
+      margin: 0.5rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
-      color: #fff;
-      background: none;
-      border: 2px solid #ff00ff;
-      box-shadow: 0 0 8px #ff00ff;
-      transition: all 0.3s ease;
+      color: white;
+      background-color: #3498db;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
-      background-color: #00f0ff;
-      border-color: #00f0ff;
-      box-shadow: 0 0 15px #00f0ff;
-      color: #000;
+      background-color: #2980b9;
+      transform: translateY(-2px);
     }
 
     footer {
-      margin-top: 9rem;
+      text-align: center;
       padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: #f1f1f1;
+      color: #777;
       font-size: 0.9rem;
-      color: #ccc;
-      border-top: 1px solid #444;
+      margin-top: 4rem;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
+
+<div id="overlay"></div>
+
 <header>
   <h1>Sanjar's Vlog</h1>
   <nav>
@@ -149,22 +177,33 @@
     <img src="sancho.jpg" alt="Sanjar's photo" class="profile-pic" />
     <h2>Mr Sanjar</h2>
     <p>Software Engineer</p>
-    <p>The art of coding is masterpiece.</p>
+    <p>The art of coding is a masterpiece.</p>
+
     <div class="social-links">
       <a href="https://www.youtube.com/@nullteen" target="_blank"><i class="fab fa-youtube"></i></a>
       <a href="https://github.com/SanjarIsmailov" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/sanjar-ismailov-931479302/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://t.me/nullteen" target="_blank"><i class="fab fa-telegram"></i></a>
     </div>
+
     <div class="buttons">
-      <a href="blog.html"><button class="read-blog">Read Blog</button></a>
-      <a href="about.html"><button class="about-me">About Me</button></a>
+      <a href="blog.html"><button>Read Blog</button></a>
+      <a href="about.html"><button>About Me</button></a>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 nullteen</p>
+  <p>&copy; 2025 nullteen. All rights reserved.</p>
 </footer>
+
+<script>
+  window.addEventListener('load', () => {
+    const overlay = document.getElementById('overlay');
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.style.display = 'none', 500);
+  });
+</script>
+
 </body>
 </html>
