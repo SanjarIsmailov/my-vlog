@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sanjar's Vlog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -13,113 +13,90 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
-
     body {
-      background-color: #f9f9f9;
-      color: #333;
+      background-image: url('bg.jpg'); /* Your local image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      filter: grayscale(100%);
+      color: #fff;
       line-height: 1.6;
-      scroll-behavior: smooth;
+      min-height: 100vh;
     }
-
-    /* Fade-in overlay */
-    #overlay {
-      position: fixed;
-      inset: 0;
-      background-color: #ffffff;
-      z-index: 2000;
-      transition: opacity 0.5s ease;
-    }
-
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1.2rem 2rem;
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background-color: rgba(0, 0, 0, 0.7);
       position: sticky;
       top: 0;
       z-index: 1000;
+      backdrop-filter: blur(6px);
     }
-
     header h1 {
       font-size: 1.8rem;
-      color: #2c3e50;
+      color: #fff;
+      text-shadow: 0 0 10px #ffffffaa;
     }
-
     nav a {
       margin: 0 1rem;
       text-decoration: none;
-      color: #2c3e50;
+      color: #ccc;
       font-weight: 500;
-      opacity: 0;
-      transform: translateY(-10px);
-      animation: fadeInUp 0.6s ease forwards;
     }
-
-    nav a:nth-child(1) { animation-delay: 0.2s; }
-    nav a:nth-child(2) { animation-delay: 0.3s; }
-    nav a:nth-child(3) { animation-delay: 0.4s; }
-    nav a:nth-child(4) { animation-delay: 0.5s; }
-
     nav a:hover {
-      color: #3498db;
+      color: #fff;
     }
-
     main {
       padding: 3rem 1rem;
       max-width: 900px;
       margin: auto;
-      animation: fadeInUp 1s ease-out both;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
     }
-
     .profile {
       text-align: center;
     }
-
     .profile-pic {
       width: 160px;
       height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #3498db;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 4px solid #fff;
+      filter: grayscale(100%);
       margin-bottom: 1rem;
-      animation: fadeInUp 1.2s ease-out both;
+      box-shadow: 0 0 20px #ffffffaa, 0 0 40px #ffffff55;
     }
-
     h2 {
       margin-top: 1rem;
       font-size: 2rem;
-      color: #2c3e50;
+      color: #fff;
+      text-shadow: 0 0 8px #ffffff88;
     }
-
     p {
       margin: 0.4rem 0;
-      color: #666;
       font-size: 1.1rem;
+      color: #ccc;
+      text-shadow: 0 0 5px #aaaaaa55;
     }
-
     .social-links {
       margin-top: 1rem;
     }
-
     .social-links a {
       margin: 0 0.5rem;
       font-size: 1.5rem;
-      color: #2c3e50;
+      color: #ccc;
       transition: transform 0.3s, color 0.3s;
+      text-shadow: 0 0 5px #ffffff33;
     }
-
     .social-links a:hover {
-      color: #3498db;
+      color: #fff;
       transform: translateY(-3px);
     }
-
     .buttons {
       margin-top: 2rem;
     }
-
     button {
       padding: 0.8rem 1.6rem;
       margin: 0.5rem;
@@ -128,39 +105,28 @@
       font-size: 1rem;
       cursor: pointer;
       color: white;
-      background-color: #3498db;
+      background-color: #444;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      text-shadow: 0 0 4px #ffffff88;
+      box-shadow: 0 0 10px #ffffff33;
     }
-
     button:hover {
-      background-color: #2980b9;
+      background-color: #666;
       transform: translateY(-2px);
     }
-
-    footer {
+    .audio-player {
+      margin-top: 2rem;
       text-align: center;
-      padding: 1rem;
-      background-color: #f1f1f1;
-      color: #777;
-      font-size: 0.9rem;
-      margin-top: 4rem;
     }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    audio {
+      width: 100%;
+      max-width: 400px;
+      outline: none;
+      filter: grayscale(100%);
     }
   </style>
 </head>
 <body>
-
-<div id="overlay"></div>
 
 <header>
   <h1>Sanjar's Vlog</h1>
@@ -180,30 +146,25 @@
     <p>The art of coding is a masterpiece.</p>
 
     <div class="social-links">
-      <a href="https://www.youtube.com/@nullteen" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://github.com/SanjarIsmailov" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/sanjar-ismailov-931479302/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://t.me/SanjarIsmailow" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.youtube.com/@iamSanjar" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://github.com/SanjarIsmailov" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sanjar-ismailov-931479302/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://t.me/SanjarIsmailow" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
 
     <div class="buttons">
       <a href="blog.html"><button>Read Blog</button></a>
       <a href="about.html"><button>About Me</button></a>
     </div>
+
+    <div class="audio-player">
+      <audio id="bg-music" controls autoplay>
+        <source src="Eternal%20Warriors%20-%20peaceful%20solitude.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
   </section>
 </main>
-
-<footer>
-  <p>&copy; 2025 nullteen. All rights reserved.</p>
-</footer>
-
-<script>
-  window.addEventListener('load', () => {
-    const overlay = document.getElementById('overlay');
-    overlay.style.opacity = '0';
-    setTimeout(() => overlay.style.display = 'none', 500);
-  });
-</script>
 
 </body>
 </html>
